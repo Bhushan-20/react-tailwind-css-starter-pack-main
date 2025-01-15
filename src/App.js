@@ -1,9 +1,11 @@
 import "./App.css";
-import Movielist from "./components/Movielist.js";
+import Main from "./Movie/Main";
 
 function App() {
   return (
-    <Movielist/>
+    <div>
+      <Main/>
+    </div>
   );
 }
 
