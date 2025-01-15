@@ -1,71 +1,63 @@
-import React from 'react'
+import React from 'react';
 
-function Card({image , title , description , rating}) {
+function Card({ image, title, plot, casting_crew, date, genra, rating }) {
   return (
-    <div style={{backgroundColor: "#808080" , display:'flex'}}>
-
-    <div className='outer' >
-      <div id='img1' style={{width: null,
-        height: 300,
-        resizeMode: 'cover'}}>
-        <img src={image || 'https://image.tmdb.org/t/p/original/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg'} style={{width: null,
-        height: 500,
-        resizeMode: 'cover'}} alt='img' />
+    <div
+      style={{
+        backgroundColor: '#808080',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '20px',
+        margin: '10px',
+        borderRadius: '8px',
+      }}
+    >
+      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <img
+          src={'https://image.tmdb.org/t/p/original/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg'}
+          alt="Movie Poster"
+          style={{
+            width: '300px',
+            height: '450px',
+            objectFit: 'cover',
+            borderRadius: '8px',
+          }}
+        />
       </div>
-      
-      <div style={{marginTop: 200 , }}>
-        <h1> THE LION KING </h1>
-      </div>
-
-      <div id='des'>
-        <h3>Views in SQL are a type of virtual table that simplifies how users interact with data across one or more tables. Unlike traditional tables, a view in SQL does not store data on disk; instead, it dynamically retrieves data based on a pre-defined query each time it’s accessed.</h3>
-      </div>
-      <div className='rating'>
-        <h3> IMDB RATING : 4/5</h3>
-      </div>
+      <h1 style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '10px' }}>{title || 'Unknown Title'}</h1>
+      <h3 style={{ fontSize: '1rem', color: '#ddd', marginBottom: '10px' }}>
+        Genre: {genra || 'Unknown Genre'}
+      </h3>
+      <h3 style={{ fontSize: '1rem', color: '#ddd', marginBottom: '10px' }}>
+        Release Date: {date || 'Unknown Date'}
+      </h3>
+      <p
+        style={{
+          fontSize: '1rem',
+          color: '#ccc',
+          marginBottom: '10px',
+          textAlign: 'justify',
+          maxWidth: '80%',
+        }}
+      >
+        {plot || 'No description available.'}
+      </p>
+      <p
+        style={{
+          fontSize: '1rem',
+          color: '#ccc',
+          marginBottom: '10px',
+          textAlign: 'center',
+        }}
+      >
+        Cast: {casting_crew || 'Not available'}
+      </p>
+      <h3 style={{ fontSize: '1.2rem', color: '#fff' }}>
+        IMDB Rating: {rating ? `${rating}/10` : 'N/A'}
+      </h3>
     </div>
-    <div className='outer' >
-      <div id='img1' style={{width: null,
-        height: 300,
-        resizeMode: 'cover'}}>
-        <img src={image || 'https://image.tmdb.org/t/p/original/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg'} style={{width: null,
-        height: 500,
-        resizeMode: 'cover'}} alt='img' />
-      </div>
-      
-      <div style={{marginTop: 200 , }}>
-        <h1> THE LION KING </h1>
-      </div>
-
-      <div id='des'>
-        <h3>Views in SQL are a type of virtual table that simplifies how users interact with data across one or more tables. Unlike traditional tables, a view in SQL does not store data on disk; instead, it dynamically retrieves data based on a pre-defined query each time it’s accessed.</h3>
-      </div>
-      <div className='rating'>
-        <h3> IMDB RATING : 4/5</h3>
-      </div>
-    </div>
-    <div className='outer' >
-      <div id='img1' style={{width: null,
-        height: 300,
-        resizeMode: 'cover'}}>
-        <img src={image || 'https://image.tmdb.org/t/p/original/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg'} style={{width: null,
-        height: 500,
-        resizeMode: 'cover'}} alt='img' />
-      </div>
-      
-      <div style={{marginTop: 200 , }}>
-        <h1> THE LION KING </h1>
-      </div>
-
-      <div id='des'>
-        <h3>Views in SQL are a type of virtual table that simplifies how users interact with data across one or more tables. Unlike traditional tables, a view in SQL does not store data on disk; instead, it dynamically retrieves data based on a pre-defined query each time it’s accessed.</h3>
-      </div>
-      <div className='rating'>
-        <h3> IMDB RATING : 4/5</h3>
-      </div>
-    </div>
-    </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

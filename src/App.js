@@ -1,10 +1,10 @@
 import "./App.css";
-import Main from "./Movie/Main";
+import Movielist from "./components/Movielist";
 
 function App() {
   return (
     <div>
-      <Main/>
+      <Movielist/>
     </div>
   );
 }
