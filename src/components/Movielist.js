@@ -1,10 +1,13 @@
 import React from 'react'
 import Card from './Card'
+import useMovies from '../Movie/Movies';
 
-function movielist() {
+function Movielist() {
+    const movie = useMovies();
+    console.log(movie);
   return (
     <Card/>
   )
 }
 
-export default movielist
+export default Movielist
